@@ -1,4 +1,4 @@
 source "http://rubygems.org"
 
-# Specify your gem's dependencies in bootsrap-form.gemspec
+# Specify your gem's dependencies in bootstrap-form.gemspec
 gemspec

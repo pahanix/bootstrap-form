@@ -1,17 +1,17 @@
 # -*- encoding: utf-8 -*-
 $:.push File.expand_path("../lib", __FILE__)
-require "bootsrap-form/version"
+require "bootstrap-form/version"
 
 Gem::Specification.new do |s|
-  s.name        = "bootsrap-form"
-  s.version     = Bootsrap::Form::VERSION
+  s.name        = "bootstrap-form"
+  s.version     = Bootstrap::Form::VERSION
   s.authors     = ["David Padilla"]
   s.email       = ["david@crowdint.com"]
   s.homepage    = ""
   s.summary     = %q{Twitter Bootstrap Form helpers}
   s.description = %q{Twitter Bootstrap Form helpers}
 
-  s.rubyforge_project = "bootsrap-form"
+  s.rubyforge_project = "bootstrap-form"
 
   s.files         = `git ls-files`.split("\n")
   s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")

@@ -1,12 +1,12 @@
 # Bootstrap Form
 
-Helpers to easily use the twitter bootsrap CSS framework on your forms.
+Helpers to easily use the twitter bootstrap CSS framework on your forms.
 
 ## Usage
 
 Add the gem to your Gemfile
 
-    gem 'bootsrap-form'
+    gem 'bootstrap-form'
 
 Bundle install
 
@@ -18,7 +18,7 @@ Will add all the divs around the textfield and the classes required to
 work with bootstrap.
 
     form_for @account do |f|
-      f.bootsrap_text_field :name
+      f.bootstrap_text_field :name
     end
 
 
@@ -38,4 +38,4 @@ Same as above, but, with a password_field
 ## Error handling
 
 All fields will automatically add the classes to show errors with the Twitter
-bootsrap styles.
+bootstrap styles.

@@ -1,6 +1,6 @@
-require "bootsrap-form/version"
+require "bootstrap-form/version"
 
-module Bootsrap
+module Bootstrap
   module Form
     # Your code goes here...
   end
