@@ -12,6 +12,7 @@ require 'action_controller'
 require 'action_view'
 require 'rails/test_help'
 require 'bootstrap-form'
+require 'rr'
 
 module BootstrapForm
   class Application < Rails::Application ; end
@@ -22,3 +23,7 @@ BootstrapForm::Application.routes.draw do
 end
 
 ActionController::Base.send :include, BootstrapForm::Application.routes.url_helpers
+
+class Test::Unit::TestCase
+  include RR::Adapters::TestUnit
+end

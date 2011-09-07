@@ -20,7 +20,6 @@ Gem::Specification.new do |s|
 
   s.add_dependency 'rails', '~> 3.0'
 
-  # specify any dependencies here; for example:
   s.add_development_dependency "minitest"
-  # s.add_runtime_dependency "rest-client"
+  s.add_development_dependency "rr"
 end
