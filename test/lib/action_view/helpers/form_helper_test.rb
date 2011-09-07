@@ -22,7 +22,7 @@ class FormHelperTest < ActionView::TestCase
     options = { :object => object }
     content = ::ActiveSupport::SafeBuffer.new('content')
 
-    expected_code = %{<div class="clearfix error"><label for="post_name">Name</label><div class="input">content<span class="help-inline">can't be blank</span></div></div>}
+    expected_code = %{<div class="clearfix error"><label for="post_name">Name</label><div class="input">content<span class="help-inline"> can't be blank</span></div></div>}
     assert_equal expected_code, bootstrap_clearfix_wrap(:post, :name, options, content)
   end
 
