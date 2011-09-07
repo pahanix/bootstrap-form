@@ -18,7 +18,8 @@ module  ActionView
       end
 
       def inline_help_tag(messages)
-        messages.empty? ? '' : content_tag(:span, messages.join(','), class: 'help-inline')
+        message_span = ActiveSupport::SafeBuffer.new(" #{messages.join(',')}")
+        messages.empty? ? '' : content_tag(:span, message_span, class: 'help-inline')
       end
     end
   end
