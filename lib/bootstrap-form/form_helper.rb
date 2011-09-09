@@ -47,6 +47,7 @@ class ActionView::Helpers::FormBuilder #:nodoc:
   end
 
   def bootstrap_file_field(method, options={})
+    self.multipart = true
     @template.bootstrap_file_field(@object_name, method, objectify_options(options))
   end
 end
