@@ -10,7 +10,7 @@ class FormHelperTest < ActionView::TestCase
     stub(object).name   { 'Object Name' }
 
     expected_code = %{<div class="clearfix"><label for="post_name">Name</label><div class="input">content</div></div>}
-    assert_equal expected_code, bootstrap_clearfix_wrap(:post, :name, options, content)
+    assert_equal expected_code, bootstrap_clearfix_wrap(:post, :name, content, options)
   end
 
   def test_bootstrap_clearfix_wrap_with_errors
@@ -22,7 +22,7 @@ class FormHelperTest < ActionView::TestCase
     stub(object).name   { 'Object Name' }
 
     expected_code = %{<div class="clearfix error"><label for="post_name">Name</label><div class="input">content<span class="help-inline"> can't be blank</span></div></div>}
-    assert_equal expected_code, bootstrap_clearfix_wrap(:post, :name, options, content)
+    assert_equal expected_code, bootstrap_clearfix_wrap(:post, :name, content, options)
   end
 
   def test_bootstrap_text_field
@@ -30,7 +30,7 @@ class FormHelperTest < ActionView::TestCase
     options = { :object => mock }
 
     mock(self).text_field(:post, :name, options) { text_field }
-    mock(self).bootstrap_clearfix_wrap(:post, :name, options.dup, text_field) { html }
+    mock(self).bootstrap_clearfix_wrap(:post, :name, text_field, options.dup) { html }
     assert_equal html, bootstrap_text_field(:post, :name, options)
   end
 
@@ -39,7 +39,7 @@ class FormHelperTest < ActionView::TestCase
     options = { :object => mock }
 
     mock(self).password_field(:post, :password, options) { password_field }
-    mock(self).bootstrap_clearfix_wrap(:post, :password, options.dup, password_field) { html }
+    mock(self).bootstrap_clearfix_wrap(:post, :password, password_field, options.dup) { html }
     assert_equal html, bootstrap_password_field(:post, :password, options)
   end
 
@@ -48,7 +48,7 @@ class FormHelperTest < ActionView::TestCase
     options = { :object => mock }
 
     mock(self).collection_select(:post, :name, collection, :id, :name, options, {}) { collection_select_html }
-    mock(self).bootstrap_clearfix_wrap(:post, :name, options.dup, collection_select_html) { html }
+    mock(self).bootstrap_clearfix_wrap(:post, :name, collection_select_html, options.dup) { html }
 
     assert_equal html, bootstrap_collection_select(:post, :name, collection, :id ,:name, options)
   end
