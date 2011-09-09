@@ -34,14 +34,15 @@ Will generate something like:
       </div>
     </div>
 
-## Password Field
+## Other helpers
 
-Same as above, but, with a password_field
+So far, I have implemented the following helpers:
 
-    form_for @account do |f|
-      f.bootstrap_password_field :password
-      f.bootstrap_password_field :password_confirmation
-    end
+* bootstrap_text_field
+* bootstrap_password_field
+* bootstrap_collection_select
+
+Expect more in the near future
 
 ## Error handling
 
