@@ -52,4 +52,13 @@ class FormHelperTest < ActionView::TestCase
 
     assert_equal html, bootstrap_collection_select(:post, :name, collection, :id ,:name, options)
   end
+
+  def test_bootstrap_file_field
+    html, text_field = mock, mock
+    options = { :object => mock }
+
+    mock(self).file_field(:post, :attachment, options) { text_field }
+    mock(self).bootstrap_clearfix_wrap(:post, :attachment, text_field, options.dup) { html }
+    assert_equal html, bootstrap_file_field(:post, :attachment, options)
+  end
 end
