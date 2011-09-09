@@ -1,9 +1,8 @@
 # Bootstrap Form
 
-Helpers to easily use the twitter bootstrap CSS framework on your forms.
+Form Helpers to make your form inputs [look like this](http://twitter.github.com/bootstrap/#forms).
 
-For more info about [Twitter
-Bootstrap go here](http://twitter.github.com/bootstrap).
+Helps you to create beautiful mocks really quickly.
 
 ## Usage
 
@@ -15,17 +14,21 @@ Bundle install
 
     bundle install
 
-## Text Field
+To make them look even better, I recommend you add this to your
+application.rb
 
-Will add all the divs around the textfield and the classes required to
-work with bootstrap.
+    ActionView::Base.field_error_proc = proc { |input, instance| input }
+
+## Example
+
+You write this:
 
     form_for @account do |f|
       f.bootstrap_text_field :name
     end
 
 
-Will generate something like:
+You get something like this:
 
     <div class="clearfix">
       <label for="account_name">Name</label>
@@ -34,6 +37,8 @@ Will generate something like:
       </div>
     </div>
 
+Pretty straight forward.
+
 ## Other helpers
 
 So far, I have implemented the following helpers:
@@ -41,6 +46,7 @@ So far, I have implemented the following helpers:
 * bootstrap_text_field
 * bootstrap_password_field
 * bootstrap_collection_select
+* bootstrap_file_field
 
 Expect more in the near future
 
@@ -51,5 +57,4 @@ bootstrap styles.
 
 # TODO
 
-* Refactor the code, there's lots of things that can be done better
 * More form inputs
