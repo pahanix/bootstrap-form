@@ -47,6 +47,7 @@ So far, I have implemented the following helpers:
 * bootstrap_password_field
 * bootstrap_collection_select
 * bootstrap_file_field
+* bootstrap_text_area
 
 Expect more in the near future
 
