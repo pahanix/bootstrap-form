@@ -61,4 +61,13 @@ class FormHelperTest < ActionView::TestCase
     mock(self).bootstrap_clearfix_wrap(:post, :attachment, text_field, options.dup) { html }
     assert_equal html, bootstrap_file_field(:post, :attachment, options)
   end
+
+  def test_bootstrap_text_area
+    html, text_area = mock, mock
+    options = { :object => mock }
+
+    mock(self).text_area(:post, :description, options) { text_area }
+    mock(self).bootstrap_clearfix_wrap(:post, :description, text_area, options.dup) { html }
+    assert_equal html, bootstrap_text_area(:post, :description, options)
+  end
 end
