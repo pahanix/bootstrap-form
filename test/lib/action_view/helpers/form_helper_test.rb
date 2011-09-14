@@ -13,6 +13,18 @@ class FormHelperTest < ActionView::TestCase
     assert_equal expected_code, bootstrap_clearfix_wrap(:post, :name, content, options)
   end
 
+  def test_bootstrap_clearfix_wrap_with_label
+    object  = mock
+    errors  = { :name   => [] }
+    options = { :object => object, :label => "Custom" }
+    content = ::ActiveSupport::SafeBuffer.new('content')
+    stub(object).errors { errors }
+    stub(object).name   { 'Object Name' }
+
+    expected_code = %{<div class="clearfix"><label for="post_name">Custom</label><div class="input">content</div></div>}
+    assert_equal expected_code, bootstrap_clearfix_wrap(:post, :name, content, options)
+  end
+
   def test_bootstrap_clearfix_wrap_with_errors
     object  = mock
     errors  = { :name   => ["can't be blank"] }
@@ -70,4 +82,5 @@ class FormHelperTest < ActionView::TestCase
     mock(self).bootstrap_clearfix_wrap(:post, :description, text_area, options.dup) { html }
     assert_equal html, bootstrap_text_area(:post, :description, options)
   end
+  
 end
