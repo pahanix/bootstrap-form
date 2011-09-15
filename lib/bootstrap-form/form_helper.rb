@@ -46,6 +46,10 @@ class ActionView::Helpers::FormBuilder #:nodoc:
     @template.bootstrap_text_field(@object_name, method, objectify_options(options))
   end
 
+  def bootstrap_email_field(method, options={})
+    @template.bootstrap_email_field(@object_name, method, objectify_options(options))
+  end
+
   def bootstrap_password_field(method, options={})
     @template.bootstrap_password_field(@object_name, method, objectify_options(options))
   end
