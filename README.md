@@ -70,6 +70,8 @@ Then, you get something like this:
 All fields will automatically add the classes to show errors with the Twitter
 bootstrap styles.
 
-# TODO
+## TODO
+
+Coming soon:
 
 * More form inputs
