@@ -46,6 +46,15 @@ class FormHelperTest < ActionView::TestCase
     assert_equal html, bootstrap_text_field(:post, :name, options)
   end
 
+  def test_bootstrap_email_field
+    html, email_field = mock, mock
+    options = { :object => mock }
+
+    mock(self).email_field(:post, :email, options) { email_field }
+    mock(self).bootstrap_clearfix_wrap(:post, :email, email_field, options.dup) { html }
+    assert_equal html, bootstrap_email_field(:post, :email, options)
+  end
+
   def test_bootstrap_password_field
     html, password_field = mock, mock
     options = { :object => mock }

@@ -5,6 +5,10 @@ module  ActionView
         bootstrap_clearfix_wrap(object_name, method, text_field(object_name, method, options.dup), options)
       end
 
+      def bootstrap_email_field(object_name, method, options={})
+        bootstrap_clearfix_wrap(object_name, method, email_field(object_name, method, options.dup), options)
+      end
+
       def bootstrap_password_field(object_name, method, options={})
         bootstrap_clearfix_wrap(object_name, method, password_field(object_name, method, options.dup), options)
       end
