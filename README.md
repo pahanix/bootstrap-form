@@ -39,17 +39,31 @@ You get something like this:
 
 Pretty straight forward.
 
-## Other helpers
+## Custom Label
 
-So far, I have implemented the following helpers:
+You can specify a custom label for the input by setting the label
+option:
+
+    form_for @account do |f|
+      f.bootstrap_text_field :name, :label => 'A custom label'
+    end
+
+Then, you get something like this:
+
+    <div class="clearfix">
+      <label for="account_name">A custom label</label>
+      <div class="input">
+        <input class="xlarge" id="account_name" name="account_name" size="30" type="text">
+      </div>
+    </div>
+
+## Current Helpers List
 
 * bootstrap_text_field
 * bootstrap_password_field
 * bootstrap_collection_select
 * bootstrap_file_field
 * bootstrap_text_area
-
-Expect more in the near future
 
 ## Error handling
 
