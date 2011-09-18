@@ -64,6 +64,7 @@ Then, you get something like this:
 * bootstrap_collection_select
 * bootstrap_file_field
 * bootstrap_text_area
+* bootstrap_email_field
 
 ## Error handling
 
