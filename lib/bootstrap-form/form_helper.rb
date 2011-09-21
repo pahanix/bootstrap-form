@@ -2,7 +2,7 @@ module  ActionView
   module Helpers
     module FormHelper
       
-      BOOTSTRAP_OPTIONS = %w(label hint).freeze
+      BOOTSTRAP_OPTIONS = [:label, :hint].freeze
       
       def bootstrap_text_field(object_name, method, options={})
         bootstrap_clearfix_wrap(object_name, method, text_field(object_name, method, extract_input_options(options)), options)
@@ -48,7 +48,7 @@ module  ActionView
       private
       
       def extract_input_options(options)
-        options.stringify_keys.except(*BOOTSTRAP_OPTIONS)
+        options.except(*BOOTSTRAP_OPTIONS)
       end
     end
   end
