@@ -37,6 +37,18 @@ class FormHelperTest < ActionView::TestCase
     assert_equal expected_code, bootstrap_clearfix_wrap(:post, :name, content, options)
   end
 
+  def test_bootstrap_clearfix_wrap_with_many_errors
+    object  = mock
+    errors  = { :name   => ["has already been taken", "is reserved", "must be odd"] }
+    options = { :object => object }
+    content = ::ActiveSupport::SafeBuffer.new('content')
+    stub(object).errors { errors }
+    stub(object).name   { 'Object Name' }
+
+    expected_code = %{<div class="clearfix error"><label for="post_name">Name</label><div class="input">content<span class="help-inline"> has already been taken, is reserved, and must be odd</span></div></div>}
+    assert_equal expected_code, bootstrap_clearfix_wrap(:post, :name, content, options)
+  end
+
   def test_bootstrap_clearfix_wrap_with_hint
     object  = mock
     errors  = {}
